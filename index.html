@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop Practice</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Tailwind Extensions (Optional for Customizations) */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div class="container max-w-lg bg-white p-8 rounded-lg shadow-lg">
+        <!-- Header -->
+        <h1 class="text-2xl font-bold text-gray-800 text-center mb-6">Make Notes</h1>
+        
+        <!-- Input Field -->
+        <div class="relative">
+            <input 
+                id="input" 
+                type="text"
+                placeholder="Add your note..."
+                class="w-full px-5 py-3 text-gray-700 bg-gray-100 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300"
+            />
+            <!-- Icon (Optional for Styling) -->
+            <div id="submitButton" class="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer" >
+                <i class="material-icons text-gray-400 hover:text-blue-500 transition duration-200">send</i>
+            </div>
+        </div>
+        
+        <!-- Dropdown for Suggestions -->
+        <ul 
+            id="dropdown" 
+            class="mt-2 bg-white border border-gray-300 rounded-lg shadow-lg hidden p-4 space-y-2 text-gray-700 text-sm hover:bg-gray-50 transition-all">
+        </ul>
+
+        <!-- Static Task List -->
+        <div class="mt-8">
+            <h2 class="text-lg font-semibold text-gray-800">Static Task List</h2>
+            <ul class="mt-4 space-y-2 text-gray-600" id="taskList">
+            </ul>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
